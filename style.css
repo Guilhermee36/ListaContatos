@@ -1,0 +1,250 @@
+:root {
+    --primary-color: #205781;
+    /* Cor principal (usada para header, footer, etc.) */
+    --secondary-color: #4F959D;
+    /* Cor secundária (para botões, destaques) */
+    --tertiary-color: #98D2C0;
+    /* Cor de fundo secundária */
+    --white-color: #e5e6e3;
+    /* Cor branca (fundo, textos leves) */
+}
+
+/* Corpo do site */
+body {
+    background-color: var(--tertiary-color);
+    font-family: 'Lucida Sans', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Estilo para o título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--white-color);
+    /* Cor primária para o título */
+}
+
+/* Estilo para a tabela */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: var(--white-color);
+    /* Cor branca para a tabela */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o cabeçalho da tabela */
+thead {
+    background-color: var(--primary-color);
+    /* Cor primária no cabeçalho */
+    color: white;
+}
+
+/* Estilo para as células da tabela */
+td,
+th {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* Estilo para as linhas alternadas da tabela */
+tbody tr:nth-child(even) {
+    background-color: var(--tertiary-color);
+    /* Cor terciária para linhas alternadas */
+}
+
+/* Estilo para o botão */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--secondary-color);
+    /* Cor secundária para o botão */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Garante que o conteúdo ocupe o espaço restante */
+    text-align: center;
+}
+
+ input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.putAlt input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Aplica a mesma aparência de td e table */
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(5, 136, 136, 0.5);
+    outline: none;
+}
+
+button,
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    /* Cor secundária */
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: var(--primary-color);
+    /* Cor primária no hover */
+    transform: scale(1.05);
+    /* Aumento suave ao passar o mouse */
+}
+
+button:active,
+input[type="submit"]:active {
+    transform: scale(0.98);
+    /* Efeito de clique */
+}
+
+/* Efeito de hover no botão */
+.btn:hover {
+    background-color: var(--primary-color);
+    /* Cor primária para hover */
+    transform: scale(1.05);
+    /* Leve aumento no hover */
+}
+
+.btn:active {
+    transform: scale(0.98);
+    /* Efeito de clique */
+}
+
+.center-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Ocupa toda a altura da tela */
+    width: 100%;
+    text-align: center;
+    gap: 10px;
+}
+
+a.voltar {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    /* Cor secundária */
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.voltar:hover {
+    background-color: var(--primary-color);
+    /* Cor primária no hover */
+    transform: scale(1.05);
+    /* Aumento suave ao passar o mouse */
+}
+
+a.voltar:active {
+    transform: scale(0.98);
+    /* Efeito de clique */
+}
+
+/* Estilo para o cabeçalho (header) */
+header {
+    background-color: var(--primary-color);
+    /* Cor primária para o cabeçalho */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Estilo para o rodapé (footer) */
+footer {
+    background-color: var(--primary-color);
+    /* Cor primária para o rodapé */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+      box-sizing: border-box;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 600px) {
+
+    header,
+    footer {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        /* Tabela ocupa toda a largura */
+    }
+
+    .btn {
+        font-size: 14px;
+        /* Reduz o tamanho da fonte */
+        padding: 8px 16px;
+        /* Ajusta o padding */
+    }
+}

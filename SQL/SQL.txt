@@ -1,0 +1,9 @@
+CREATE DATABASE Agenda2B2023
+
+CREATE TABLE tbl_Contatos(
+    Codigo SMALLINT primary key AUTO_INCREMENT,
+    Nome varchar (50)  null,
+    Apelido varchar (50)  null,
+    DataDeNascimento varchar (50)  null,
+    Telefone varchar (50)  null,
+    RedeSocial varchar (50)  null);
