@@ -1,41 +1,61 @@
-#listas de contatos
+# Agenda de Contatos 
 
-Este código refere-se a uma aplicação PHP simples para gerenciar uma lista de contatos. Ele possui funcionalidades de listagem, alteração e exclusão de contatos, interagindo com um banco de dados MySQL para armazenar e manipular as informações. A seguir, detalho os principais componentes do código:
+Este é um projeto de gerenciamento de contatos, desenvolvido utilizando PHP e MySQL. Ele permite realizar as operações CRUD (Criar, Ler, Atualizar, Deletar) para manipulação de contatos, como adicionar, editar e excluir informações dos contatos.
 
-Estrutura do Código
-Conexão com o Banco de Dados:
+## Funcionalidades
 
-O código utiliza o MySQL para armazenar dados dos contatos, com parâmetros de conexão definidos diretamente no código (servidor, usuário, senha e banco de dados).
-A conexão com o banco de dados é estabelecida em todas as páginas e encerrada após a execução das operações SQL, o que garante a integridade das transações.
-Exibição dos Contatos:
+- **Visualização de Contatos**: Exibe uma lista de contatos cadastrados no banco de dados.
+- **Alteração de Contatos**: Permite editar os dados de um contato específico.
+- **Exclusão de Contatos**: Permite excluir um contato após confirmação.
+- **Cadastro de Contatos**: Adiciona novos contatos ao banco de dados.
 
-Em TelaPrincipal.php, a aplicação executa uma consulta SQL para obter todos os registros da tabela tbl_contatos e exibi-los em uma tabela HTML.
-Cada linha da tabela representa um contato, com os campos: código, nome, apelido, data de nascimento, telefone e rede social.
-Além disso, para cada contato, são exibidos botões para alteração e exclusão.
-Alteração de Dados:
+## Tecnologias Utilizadas
 
-O usuário pode alterar os dados de um contato clicando no botão de Alterar, que direciona para Alterar1.php. Neste arquivo, é apresentado um formulário preenchido com os dados atuais do contato, permitindo a edição.
-O formulário de alteração inclui campos para Nome, Apelido, Data de Nascimento, Telefone e Rede Social, sendo que o campo Código é somente leitura.
-Exclusão de Contatos:
+- **PHP**: Para a lógica de backend e interação com o banco de dados.
+- **MySQL**: Para o armazenamento e gerenciamento dos dados dos contatos.
+- **HTML/CSS**: Para a estruturação e estilização da interface.
+- **JavaScript**: Para a confirmação de exclusão com um prompt antes de realizar a exclusão do contato.
 
-A exclusão de um contato é realizada por meio de uma confirmação, onde o usuário clica em Excluir na lista de contatos, o que aciona a função confirmarExclusao(). Essa função exibe um prompt de confirmação e, caso a resposta seja afirmativa, a página é redirecionada para ExcludeConfirm.php, que realiza a exclusão do contato do banco de dados.
-O botão de Excluir usa um onclick para chamar a função JavaScript confirmarExclusao(), que solicita ao usuário uma confirmação antes de realizar a exclusão.
-Estilo e Layout:
+## Funcionalidades Detalhadas
 
-O estilo da página é ajustado com um arquivo CSS (style.css), que garante uma aparência moderna e limpa.
-O layout é responsivo, com a centralização do conteúdo na tela, incluindo uma tabela de contatos organizada e bem formatada. As cores e botões seguem uma paleta definida com cores que favorecem uma boa leitura e navegabilidade.
-A página utiliza flexbox para centralizar os elementos, tornando o design adaptável e bem posicionado em diversas resoluções de tela.
-Rodapé e Cabeçalho:
+### Tela Principal
+- A página principal exibe uma tabela com a lista de contatos cadastrados.
+- A tabela contém os seguintes campos: Código, Nome, Apelido, Data de Nascimento, Telefone, Rede Social.
+- Cada linha da tabela possui botões para **Alterar** e **Excluir** o contato.
 
-O cabeçalho da página (<header>) é fixo no topo e contém o título "Lista de Contatos", enquanto o rodapé (<footer>) é fixo na parte inferior da página, proporcionando informações sobre a autoria do projeto.
-Ambos os elementos são estilizados de forma consistente, com o cabeçalho sendo destacado em uma cor de fundo sólida, que contrasta com o conteúdo principal.
-Funcionalidades
-Visualização: O usuário pode visualizar todos os contatos cadastrados no banco de dados em uma tabela bem estruturada.
-Alteração: O usuário pode editar os dados de um contato específico clicando em um link que o direciona para uma página de edição.
-Exclusão: O usuário pode excluir um contato após uma confirmação explícita, para evitar exclusões acidentais.
-Cadastro: Há também um link para adicionar novos contatos, permitindo o cadastro diretamente pela página de CadastroCont.php.
-Fluxo de Navegação
-Tela Principal: Exibe a lista de contatos e oferece as opções de Alterar ou Excluir.
-Alteração de Contato: Ao clicar em Alterar, o usuário é redirecionado para uma página de edição onde pode modificar os dados de um contato específico.
-Confirmação de Exclusão: O usuário pode confirmar ou cancelar a exclusão de um contato com um prompt de confirmação antes que a exclusão aconteça no banco de dados.
-Cadastro de Novo Contato: O usuário pode acessar a página de cadastro para inserir novos contatos à lista.
+### Alteração de Contato
+- Ao clicar no botão **Alterar**, o usuário é redirecionado para uma página de edição onde pode modificar os dados do contato.
+- O formulário é preenchido com os dados atuais, permitindo que o usuário edite as informações necessárias.
+
+### Exclusão de Contato
+- Ao clicar no botão **Excluir**, o usuário é solicitado a confirmar a exclusão do contato com um **prompt** JavaScript.
+- Se o usuário confirmar, o contato será removido do banco de dados.
+
+### Cadastro de Novo Contato
+- A página de cadastro permite adicionar novos contatos com os campos: Nome, Apelido, Data de Nascimento, Telefone e Rede Social.
+
+## Instalação
+
+### Pré-requisitos
+- Um servidor web com suporte a PHP (como Apache ou Nginx).
+- O MySQL ou MariaDB para o banco de dados.
+- Um editor de código como VS Code ou Sublime Text para editar os arquivos.
+
+### Passos para Configuração
+
+1. **Baixar os arquivos**:
+   - Clone ou baixe o repositório em sua máquina local.
+
+2. **Configurar o Banco de Dados**:
+   - Crie um banco de dados MySQL chamado `agenda2B2023`.
+   - Execute o seguinte comando para criar a tabela `tbl_contatos`:
+
+   ```sql
+   CREATE TABLE tbl_contatos (
+       Codigo INT AUTO_INCREMENT PRIMARY KEY,
+       Nome VARCHAR(255),
+       Apelido VARCHAR(255),
+       DataDeNascimento DATE,
+       Telefone VARCHAR(20),
+       RedeSocial VARCHAR(255)
+   );
