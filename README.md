@@ -1,3 +1,5 @@
+#listas de contatos
+
 Este código refere-se a uma aplicação PHP simples para gerenciar uma lista de contatos. Ele possui funcionalidades de listagem, alteração e exclusão de contatos, interagindo com um banco de dados MySQL para armazenar e manipular as informações. A seguir, detalho os principais componentes do código:
 
 Estrutura do Código
